@@ -7,11 +7,12 @@ const EstiloGlobal = createGlobalStyle`
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
+    font-family: "Jua", sans-serif;
   }
 `
 
 export const Container = styled.div`
-  padding: 0 55px;
+  padding: 30px 55px;
 `
 
 export default EstiloGlobal

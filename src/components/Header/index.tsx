@@ -1,16 +1,15 @@
-import { Link } from "react-router-dom"
-
 import * as S from './styles'
+import FiltroDropdpwn from "../FiltroDropdown"
 
 const Header = () => {
   return (
     <>
       <S.Header>
         <h1>Lista de Contatos</h1>
-        <div>
-
-          <Link to='/NovoContato'>Novo Contato</Link>
-        </div>
+        <S.Div>
+          <FiltroDropdpwn />
+          <S.Button to='/NovoContato'>Novo Contato</S.Button>
+        </S.Div>
       </S.Header>
     </>
   )
