@@ -11,7 +11,7 @@ const Perfil = () => {
         <S.Titulo>Meu Contato</S.Titulo>
         <S.InfoDiv>
           <S.PerfilIcon src={Icon} alt="Foto de perfil" />
-          <span>Name</span>
+          <span>Julio</span>
           <p>JulioVieira@gmail.com</p>
         </S.InfoDiv>
         <S.InfoPessoal>
