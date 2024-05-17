@@ -1,4 +1,10 @@
+import { Link } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
+
+type Props = {
+  Navegar?: string | number
+  cor?: string | number
+}
 
 const EstiloGlobal = createGlobalStyle`
   *{
@@ -15,5 +21,28 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 378px auto;
 `
+export const ButtonLink = styled(Link)<Props>`
+  background-color: ${props => (props.Navegar ? "#ccc" : "#55C875")};
+  color: #303030;
+  border-radius: 5px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
 
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
+export const Button = styled.button<Props>`
+  background-color: ${props => (props.cor ? "#ccc" : "#55C875")};
+  border-radius: 5px;
+  color: #303030;
+  padding: 8px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+`
 export default EstiloGlobal

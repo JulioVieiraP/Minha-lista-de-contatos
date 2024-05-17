@@ -1,5 +1,6 @@
 import * as S from './styles'
 import FiltroDropdpwn from "../FiltroDropdown"
+import { ButtonLink } from '../../styles'
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
         <h1>Lista de Contatos</h1>
         <S.Div>
           <FiltroDropdpwn />
-          <S.Button to='/NovoContato'>Novo Contato</S.Button>
+          <ButtonLink to='/NovoContato'>Novo Contato</ButtonLink>
         </S.Div>
       </S.Header>
     </>

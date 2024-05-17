@@ -1,13 +1,11 @@
-import Header from "../../components/Header"
-import Perfil from "../../components/Perfil"
+import HomeContainer from "../../containers/HomeContainer";
 
 const Home = () => {
   return (
     <>
-      <Perfil />
-      <Header />
+      <HomeContainer />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
