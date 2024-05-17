@@ -17,10 +17,10 @@ const initialState: Contact = {
       icon: Icon,
     },
     {
-      Name: 'Maria',
-      telefone: '9432141',
-      Gmail: 'onichan@gmail.com',
-      descricao: 'BestFriend',
+      Name: 'Julio',
+      telefone: '98300766',
+      Gmail: 'Julio@gmail.com',
+      descricao: 'Eu',
       icon: Icon2,
     },
 
