@@ -1,7 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import Contato from '../../Model/Contato';
-import Icon from '../../assets/Foto_Perfil2.png';
-import Icon2 from '../../assets/Foto_Perfil.png'
+
 
 type Contact = {
   itens: Contato[];
@@ -14,14 +13,12 @@ const initialState: Contact = {
       telefone: '0706312495',
       Gmail: 'jonhdavid@gmail.com',
       descricao: 'Java Developer',
-      icon: Icon,
     },
     {
       Name: 'Julio',
       telefone: '98300766',
       Gmail: 'Julio@gmail.com',
       descricao: 'Eu',
-      icon: Icon2,
     },
 
   ],

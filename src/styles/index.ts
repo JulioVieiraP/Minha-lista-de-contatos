@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from "styled-components";
 type Props = {
   Navegar?: string | number
   confirmar?: string | number
-  delete?: boolean
+  delete?: string | number | boolean
 }
 
 const EstiloGlobal = createGlobalStyle`

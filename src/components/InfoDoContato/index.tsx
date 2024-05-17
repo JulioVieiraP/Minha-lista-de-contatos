@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail, MdOutlineChatBubble } from "react-icons/md";
+import { Button } from "../../styles";
 
 interface ContactInfo {
   name: string;
@@ -8,7 +9,6 @@ interface ContactInfo {
   phoneNumber: string;
   emailAddress: string;
   chatInfo: string;
-  Icon?: string
 }
 
 interface Props {
@@ -19,11 +19,12 @@ interface Props {
 const InfoDoContato = ({ showInfo = false, contact }: Props) => {
   if (!contact) return <S.Mensagem>Nenhum contato selecionado</S.Mensagem>;
 
+
   return (
     <>
       {showInfo && (
         <S.InfoDiv>
-          <S.InfoImg src='${contact.Icon}' alt="Imagem de placeholder" />
+          <S.InfoImg src="https://via.placeholder.com/150x150" alt="Imagem de placeholder" />
           <S.InfoDescricao>
             <p>{contact.name}</p>
             <span>{contact.description}</span>
@@ -51,6 +52,7 @@ const InfoDoContato = ({ showInfo = false, contact }: Props) => {
               <S.linkSvg><MdOutlineChatBubble /></S.linkSvg>
             </div>
           </S.InfoStatus>
+          <Button>Editar</Button>
         </S.InfoDiv>
       )}
     </>

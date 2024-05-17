@@ -14,7 +14,6 @@ interface Contato {
   descricao?: string;
   telefone: string;
   Gmail: string;
-  icon?: string;
 }
 
 interface ContactInfo {
@@ -23,7 +22,6 @@ interface ContactInfo {
   phoneNumber: string;
   emailAddress: string;
   chatInfo: string;
-  icon?: string;
 }
 
 const InfosDoContato = (contato: Contato): ContactInfo => ({
@@ -32,7 +30,6 @@ const InfosDoContato = (contato: Contato): ContactInfo => ({
   phoneNumber: contato.telefone,
   emailAddress: contato.Gmail,
   chatInfo: contato.descricao ?? "Chat não disponível",
-  icon: contato.icon
 });
 
 
@@ -52,7 +49,7 @@ const ListaDeContatos = () => {
           {itens.map((contato) => (
             <S.ContactItem key={contato.telefone}>
               <S.ContactDetails>
-                {contato.icon && <S.ContactImage src={contato.icon} alt="Ícone do Contato" />}
+                {contato.icon && <S.ContactImage as={contato.icon} alt="Ícone do Contato" />}
                 <div>
                   <S.P>{contato.Name}</S.P>
                   <S.Descricao>{contato.descricao ?? "Descrição não disponível"}</S.Descricao>
@@ -60,7 +57,7 @@ const ListaDeContatos = () => {
                 <S.P>{contato.telefone}</S.P>
                 <S.Gmail>{contato.Gmail}</S.Gmail>
                 <Button onClick={() => handleClick(contato)}>Ver</Button>
-                <Button delete onClick={() => dispatch(Delete(contato.Name))}>Deletar</Button>
+                <Button delete="true" onClick={() => dispatch(Delete(contato.Name))}>Deletar</Button>
               </S.ContactDetails>
             </S.ContactItem>
           ))}
