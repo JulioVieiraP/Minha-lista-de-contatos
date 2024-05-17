@@ -8,6 +8,7 @@ import { Button } from "../../styles";
 import { Mensagem } from "../InfoDoContato/styles";
 
 import InfoDoContato from "../InfoDoContato";
+import Img from "../../Images/FotoPerfil2.png"
 
 interface Contato {
   Name: string;
@@ -49,7 +50,7 @@ const ListaDeContatos = () => {
           {itens.map((contato) => (
             <S.ContactItem key={contato.telefone}>
               <S.ContactDetails>
-                {contato.icon && <S.ContactImage as={contato.icon} alt="Ícone do Contato" />}
+                <S.ContactImage src={Img} alt="Ícone do Contato" />
                 <div>
                   <S.P>{contato.Name}</S.P>
                   <S.Descricao>{contato.descricao ?? "Descrição não disponível"}</S.Descricao>

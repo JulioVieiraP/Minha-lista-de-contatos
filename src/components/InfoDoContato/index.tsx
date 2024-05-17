@@ -3,6 +3,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail, MdOutlineChatBubble } from "react-icons/md";
 import { Button } from "../../styles";
 
+import Img from "../../Images/FotoPerfil2.png"
+
 interface ContactInfo {
   name: string;
   description: string;
@@ -24,7 +26,7 @@ const InfoDoContato = ({ showInfo = false, contact }: Props) => {
     <>
       {showInfo && (
         <S.InfoDiv>
-          <S.InfoImg src="https://via.placeholder.com/150x150" alt="Imagem de placeholder" />
+          <S.InfoImg src={Img} alt="Imagem de placeholder" />
           <S.InfoDescricao>
             <p>{contact.name}</p>
             <span>{contact.description}</span>

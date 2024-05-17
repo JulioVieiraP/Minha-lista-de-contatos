@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import Contato from '../../Model/Contato';
 
 
+
 type Contact = {
   itens: Contato[];
 };

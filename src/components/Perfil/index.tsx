@@ -1,5 +1,6 @@
 import { CiCalendarDate, CiLocationOn } from "react-icons/ci"
 import { MdOutlinePhone } from "react-icons/md"
+import Img from "../../Images/FotoPerfil1.jpg"
 
 import * as S from './styles'
 
@@ -9,7 +10,7 @@ const Perfil = () => {
       <S.PerfilDiv>
         <S.Titulo>Meu Contato</S.Titulo>
         <S.InfoDiv>
-          <S.PerfilIcon src='https://via.placeholder.com/150x150' alt="Foto de perfil" />
+          <S.PerfilIcon src={Img} alt="Foto de perfil" />
           <span>Julio</span>
           <p>JulioVieira@gmail.com</p>
         </S.InfoDiv>
