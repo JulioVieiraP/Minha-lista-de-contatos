@@ -2,16 +2,29 @@ import * as S from './styles'
 import FiltroDropdpwn from "../FiltroDropdown"
 import { ButtonLink } from '../../styles'
 
-const Header = () => {
+type Props = {
+  Voltar?: boolean
+}
+
+const Header = ({ Voltar }: Props) => {
   return (
     <>
-      <S.Header>
-        <h1>Lista de Contatos</h1>
+      {Voltar ? (
+        <S.Header>
+          <h1>Adicionar Contato</h1>
         <S.Div>
-          <FiltroDropdpwn />
-          <ButtonLink to='/NovoContato'>Novo Contato</ButtonLink>
+          <ButtonLink to='/'>Voltar</ButtonLink>
         </S.Div>
-      </S.Header>
+        </S.Header>
+      ) : (
+        <S.Header>
+          <h1>Lista de Contatos</h1>
+          <S.Div>
+            <FiltroDropdpwn />
+            <ButtonLink to='/NovoContato'>Novo Contato</ButtonLink>
+          </S.Div>
+        </S.Header>
+      )}
     </>
   )
 }

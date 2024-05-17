@@ -26,7 +26,7 @@ const InfoDoContato = ({ showInfo = false, contact }: Props) => {
     <>
       {showInfo && (
         <S.InfoDiv>
-          <S.InfoImg src={Img} alt="Imagem de placeholder" />
+          <S.InfoImg src={Img} alt="Imagem do perfil" />
           <S.InfoDescricao>
             <p>{contact.name}</p>
             <span>{contact.description}</span>
