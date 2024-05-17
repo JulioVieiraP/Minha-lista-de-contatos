@@ -3,7 +3,8 @@ import styled, { createGlobalStyle } from "styled-components";
 
 type Props = {
   Navegar?: string | number
-  cor?: string | number
+  confirmar?: string | number
+  delete?: boolean
 }
 
 const EstiloGlobal = createGlobalStyle`
@@ -36,10 +37,11 @@ export const ButtonLink = styled(Link)<Props>`
 `;
 
 export const Button = styled.button<Props>`
-  background-color: ${props => (props.cor ? "#ccc" : "#55C875")};
+  background-color: ${props => props.delete ? 'red' : (props.confirmar ? '#55C875' : '#ccc')};
   border-radius: 5px;
   color: #303030;
   padding: 8px;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.5;

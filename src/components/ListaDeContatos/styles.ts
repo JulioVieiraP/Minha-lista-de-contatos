@@ -29,6 +29,7 @@ export const ContactItem = styled.li`
   border-radius: 10px;
   border: 1px solid #ccc;
   padding: 16px;
+  width: 760px;
 `;
 
 export const ContactImage = styled.img`

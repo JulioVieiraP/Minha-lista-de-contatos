@@ -2,6 +2,7 @@ import { Button } from "../../styles"
 import * as S from "./styles"
 
 import Icon from "../../assets/Foto_Perfil2.png"
+import InfoDoContato from "../InfoDoContato"
 
 const ListaDeContatos = () => {
   return(
@@ -17,14 +18,13 @@ const ListaDeContatos = () => {
               </div>
               <S.P>0706312495</S.P>
               <S.Gmail>jonhdavid@gmail.com</S.Gmail>
-              <Button>Deletar</Button>
+              <Button>Ver</Button>
+              <Button delete >Deletar</Button>
             </S.ContactDetails>
           </S.ContactItem>
         </ul>
 
-        <div>
-          <p>teste</p>
-        </div>
+        <InfoDoContato MostrarInfo />
       </S.ContactContainer>
     </>
   )
