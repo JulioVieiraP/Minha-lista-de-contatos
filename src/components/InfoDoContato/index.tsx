@@ -1,48 +1,57 @@
 import * as S from "./styles";
-import Icon from '../../assets/Foto_Perfil2.png'
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail, MdOutlineChatBubble } from "react-icons/md";
 
-type Props = {
-  MostrarInfo?: boolean;
-};
+interface ContactInfo {
+  name: string;
+  description: string;
+  phoneNumber: string;
+  emailAddress: string;
+  chatInfo: string;
+  Icon?: string
+}
 
-const InfoDoContato = ({ MostrarInfo }: Props) => {
+interface Props {
+  showInfo?: boolean;
+  contact?: ContactInfo;
+}
+
+const InfoDoContato = ({ showInfo = false, contact }: Props) => {
+  if (!contact) return <S.Mensagem>Nenhum contato selecionado</S.Mensagem>;
+
   return (
     <>
-      {MostrarInfo ? (
+      {showInfo && (
         <S.InfoDiv>
-          <S.InfoImg src={Icon} alt="Imagem de placeholder" />
+          <S.InfoImg src='${contact.Icon}' alt="Imagem de placeholder" />
           <S.InfoDescricao>
-            <p>Name</p>
-            <span>descrição</span>
+            <p>{contact.name}</p>
+            <span>{contact.description}</span>
           </S.InfoDescricao>
           <S.InfoStatus>
             <div>
               <S.Status>
                 <p>Phone number</p>
-                <span>0902362954</span>
+                <span>{contact.phoneNumber}</span>
               </S.Status>
               <S.linkSvg><FaPhoneAlt /></S.linkSvg>
             </div>
             <div>
               <S.Status>
                 <p>Email Address</p>
-                <span>onichan@gmail.com</span>
+                <span>{contact.emailAddress}</span>
               </S.Status>
               <S.linkSvg><MdEmail /></S.linkSvg>
             </div>
             <div>
               <S.Status>
                 <p>Chat</p>
-                <span>marichan</span>
+                <span>{contact.chatInfo}</span>
               </S.Status>
               <S.linkSvg><MdOutlineChatBubble /></S.linkSvg>
             </div>
           </S.InfoStatus>
         </S.InfoDiv>
-      ) : (
-        <S.Mensagem>Nenhum contato selecionado</S.Mensagem>
       )}
     </>
   );

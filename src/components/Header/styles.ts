@@ -7,6 +7,7 @@ export const Header = styled.header`
   padding: 32px;
   flex-shrink: 0;
   height: 16vh;
+  border-bottom: 1px solid #ccc;
 `
 
 export const Div = styled.div`

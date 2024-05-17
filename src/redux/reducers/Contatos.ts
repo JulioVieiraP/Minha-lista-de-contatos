@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import Contato from '../../Model/Contato';
 import Icon from '../../assets/Foto_Perfil2.png';
+import Icon2 from '../../assets/Foto_Perfil.png'
 
 type Contact = {
   itens: Contato[];
@@ -15,6 +16,14 @@ const initialState: Contact = {
       descricao: 'Java Developer',
       icon: Icon,
     },
+    {
+      Name: 'Maria',
+      telefone: '9432141',
+      Gmail: 'onichan@gmail.com',
+      descricao: 'BestFriend',
+      icon: Icon2,
+    },
+
   ],
 };
 
@@ -25,9 +34,12 @@ const Contatos = createSlice({
     Adicionar: (state, { payload }: PayloadAction<Contact>) => {
       state.itens.push(...payload.itens);
     },
+    Delete: (state, { payload }: PayloadAction<string>) => {
+      state.itens = state.itens.filter((Item) => Item.Name !== payload);
+    },
   },
 });
 
-export const { Adicionar } = Contatos.actions;
+export const { Adicionar, Delete } = Contatos.actions;
 
 export default Contatos.reducer;

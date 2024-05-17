@@ -34,7 +34,7 @@ export const ContactItem = styled.li`
 
 export const ContactImage = styled.img`
   width: 70px;
-  border-radius: 8px;
+  border-radius: 50%;
   margin-right: 16px;
 `;
 

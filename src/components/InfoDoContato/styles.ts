@@ -4,6 +4,11 @@ export const InfoDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 150px;
+  max-width: 300px;
+  width: 100%;
 `
 
 export const InfoImg = styled.img`
@@ -48,7 +53,7 @@ export const linkSvg = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8pxpx;
+  padding: 8px;
   background-color: #00C938;
   width: 50px;
   cursor: pointer;
