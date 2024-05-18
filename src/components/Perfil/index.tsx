@@ -17,7 +17,7 @@ const Perfil = () => {
         <S.InfoPessoal>
           <div><CiCalendarDate /> 28-09-2002</div>
           <div><MdOutlinePhone /> 98300766</div>
-          <div><CiLocationOn /> Aracaju-SE</div>
+          <div><CiLocationOn /> Dev Front-end</div>
         </S.InfoPessoal>
       </S.PerfilDiv>
     </S.Aside>
