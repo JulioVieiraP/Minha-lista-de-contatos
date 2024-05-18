@@ -15,10 +15,10 @@ const initialState: Contact = {
       Chat: 'nenhum chat definido pelo usuario'
     },
     {
-      Name: 'Julio',
-      telefone: '98300766',
-      Gmail: 'Julio@gmail.com',
-      descricao: 'Eu',
+      Name: 'João',
+      telefone: '987654321',
+      Gmail: 'JoâoM@gmail.com',
+      descricao: 'Amigo',
       Chat: 'nenhum chat definido pelo usuario'
     },
   ],
@@ -28,8 +28,14 @@ const Contatos = createSlice({
   name: 'Contatos',
   initialState,
   reducers: {
-    Adicionar: (state, { payload }: PayloadAction<Contact>) => {
-      state.itens.push(...payload.itens);
+    Adicionar: (state, { payload }: PayloadAction<Contato>) => {
+      const contatoExiste = state.itens.find((contato) => contato.telefone === payload.telefone);
+
+      if(contatoExiste){
+        alert('Contato ja existente')
+      }else{
+        state.itens.push(payload)
+      }
     },
     Delete: (state, { payload }: PayloadAction<string>) => {
       state.itens = state.itens.filter((Item) => Item.Name !== payload);

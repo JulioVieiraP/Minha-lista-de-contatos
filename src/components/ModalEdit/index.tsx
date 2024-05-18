@@ -10,7 +10,7 @@ type Props = {
   setPhoneNumber: (value: string) => void;
   setGmail: (value: string) => void;
   setEditando: (value: boolean) => void;
-  Editar: () => void;
+  Editar: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Modal = ({editando, descricao, phoneNumber, gmail, Editar, setDescricao, setPhoneNumber, setGmail, setEditando}: Props) => {

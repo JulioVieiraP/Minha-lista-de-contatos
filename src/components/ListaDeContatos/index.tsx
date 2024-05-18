@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Delete, editar } from "../../redux/reducers/Contatos";
 
@@ -47,10 +47,25 @@ const ListaDeContatos = () => {
     setContatoSelecionado(contato);
   };
 
-  const [editando, setEditando] = useState(false);
-  const [descricao, setDescricao] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [gmail, setGmail] = useState('');
+  const handleEditClick = (e: React.MouseEvent<HTMLButtonElement>, contato: Contato) => {
+    e.stopPropagation();
+    setEditando(true);
+    setContatoSelecionado(contato);
+    setDescricao(contato.descricao ?? '');
+    setPhoneNumber(contato.telefone);
+    setGmail(contato.Gmail);
+  };
+
+  const handleDeleteClick = (nome: string, e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    dispatch(Delete(nome));
+  };
+
+  const contatosFiltrados = termo
+    ? itens.filter((contato: any) =>
+        contato.Name.toLowerCase().includes(termo.toLowerCase())
+      )
+    : itens;
 
   useEffect(() => {
     if (contatoSelecionado) {
@@ -60,7 +75,13 @@ const ListaDeContatos = () => {
     }
   }, [contatoSelecionado]);
 
-  const Editar = () => {
+  const [editando, setEditando] = useState(false);
+  const [descricao, setDescricao] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [gmail, setGmail] = useState('');
+
+  const Editar = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation()
     if (contatoSelecionado) {
       dispatch(
         editar({
@@ -73,12 +94,6 @@ const ListaDeContatos = () => {
       setEditando(false);
     }
   };
-
-  const contatosFiltrados = termo
-    ? itens.filter((contato: any) =>
-        contato.Name.toLowerCase().includes(termo.toLowerCase())
-      )
-    : itens;
 
   return (
     <>
@@ -94,8 +109,8 @@ const ListaDeContatos = () => {
                 </div>
                 <S.P>{contato.telefone}</S.P>
                 <S.Gmail>{contato.Gmail}</S.Gmail>
-                <Button onClick={() => setEditando(true)}>Editar</Button>
-                <Button delete="true" onClick={() => dispatch(Delete(contato.Name))}>Deletar</Button>
+                <Button onClick={(e) => handleEditClick(e, contato)}>Editar</Button>
+                <Button delete="true" onClick={(e) => handleDeleteClick(contato.Name, e)}>Deletar</Button>
               </S.ContactDetails>
             </S.ContactItem>
           ))}
@@ -121,7 +136,6 @@ const ListaDeContatos = () => {
           setEditando={setEditando}
           Editar={Editar}
         />
-
       </S.ContactContainer>
     </>
   );

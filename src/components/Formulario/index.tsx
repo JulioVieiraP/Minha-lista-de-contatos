@@ -16,20 +16,20 @@ const Formulario = () => {
   const [descricao, setDescricao] = useState('')
 
   const HandleSubmit = (e: FormEvent) => {
-    if (name == '' || gmail == '' || telefone == '' || descricao == ''){
-      alert("Insira todos os campos")
-    }else{
-        e.preventDefault()
-      dispatch(Adicionar({
-        itens: [{
-          Name: name,
-          Gmail: gmail,
-          telefone: telefone,
-          descricao:  descricao,
-          Chat: ''
-        }]
-      }))
+    e.preventDefault()
 
+    if (name === '' || gmail === '' || telefone === '' || descricao === ''){
+      alert("Insira todos os campos")
+    } else {
+      const novoContato = {
+        Name: name,
+        Gmail: gmail,
+        telefone: telefone,
+        descricao:  descricao,
+        Chat: ''
+      }
+
+      dispatch(Adicionar(novoContato))
       navigate('/')
     }
   }
@@ -43,11 +43,11 @@ const Formulario = () => {
         </S.DivForm>
         <S.DivForm>
           <label htmlFor="Gmail">Gmail</label>
-          <S.InputForm type="text" id="Gmail" placeholder="  Digite o Gmail do usuario" value={gmail} onChange={(e) => setGmail(e.target.value)}/>
+          <S.InputForm type="email" id="Gmail" placeholder="  Digite o Gmail do usuario" value={gmail} onChange={(e) => setGmail(e.target.value)}/>
         </S.DivForm>
         <S.DivForm>
           <label htmlFor="Numero">Numero</label>
-          <S.InputForm type="text" id="Numero" placeholder="  Digite o Numero do usuario" value={telefone} onChange={(e) => setTelefone(e.target.value)}/>
+          <S.InputForm type="number" id="Numero" placeholder="  Digite o Numero do usuario" value={telefone} onChange={(e) => setTelefone(e.target.value)}/>
         </S.DivForm>
         <S.DivForm>
           <label htmlFor="Descrição">Descrição</label>

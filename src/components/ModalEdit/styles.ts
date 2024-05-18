@@ -50,4 +50,6 @@ export const ModalContent = styled.div`
   border-radius: 10px;
   max-width: 500px;
   width: 100%;
+  display: flex;
+  justify-content: center;
 `;
