@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 
 type Props = {
   Navegar?: string | number
-  confirmar?: string | number
+  confirmar?: string | number | boolean
   delete?: string | number | boolean
 }
 

@@ -12,9 +12,9 @@ const Header = ({ Voltar }: Props) => {
       {Voltar ? (
         <S.Header>
           <h1>Adicionar Contato</h1>
-        <S.Div>
-          <ButtonLink to='/'>Voltar</ButtonLink>
-        </S.Div>
+          <S.Div>
+            <ButtonLink to='/'>Voltar</ButtonLink>
+          </S.Div>
         </S.Header>
       ) : (
         <S.Header>

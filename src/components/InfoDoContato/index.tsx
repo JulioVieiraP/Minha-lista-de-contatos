@@ -1,7 +1,6 @@
 import * as S from "./styles";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail, MdOutlineChatBubble } from "react-icons/md";
-import { Button } from "../../styles";
 
 import Img from "../../Images/FotoPerfil2.png"
 
@@ -54,7 +53,6 @@ const InfoDoContato = ({ showInfo = false, contact }: Props) => {
               <S.linkSvg><MdOutlineChatBubble /></S.linkSvg>
             </div>
           </S.InfoStatus>
-          <Button>Editar</Button>
         </S.InfoDiv>
       )}
     </>

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+
 export const ContactDetails = styled.div`
   font-family: "Inter", sans-serif;
   display: flex;
@@ -30,6 +32,11 @@ export const ContactItem = styled.li`
   border: 1px solid #ccc;
   padding: 16px;
   width: 760px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
 export const ContactImage = styled.img`
@@ -50,3 +57,14 @@ export const Descricao = styled(P)`
 export const Gmail = styled(P)`
   color: #696969;
 `;
+
+
+
+export const Mensagem = styled.p`
+  font-family: "Inter", sans-serif;
+  background-color: #ccc;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+`;
+
