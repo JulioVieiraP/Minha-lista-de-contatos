@@ -37,8 +37,11 @@ const InfosDoContato = (contato: Contato): ContactInfo => ({
 
 const ListaDeContatos = () => {
   const { itens } = useSelector((state: RootReducer) => state.Contato);
+  const { termo } = useSelector((state: RootReducer) => state.Filtros);
   const dispatch = useDispatch();
-  const [contatoSelecionado, setContatoSelecionado] = useState<Contato | null>(null);
+  const [contatoSelecionado, setContatoSelecionado] = useState<Contato | null>(
+    null
+  );
 
   const handleClick = (contato: Contato) => {
     setContatoSelecionado(contato);
@@ -59,21 +62,29 @@ const ListaDeContatos = () => {
 
   const Editar = () => {
     if (contatoSelecionado) {
-      dispatch(editar({
-        ...contatoSelecionado,
-        telefone: phoneNumber,
-        Gmail: gmail,
-        descricao: descricao,
-      }));
+      dispatch(
+        editar({
+          ...contatoSelecionado,
+          telefone: phoneNumber,
+          Gmail: gmail,
+          descricao: descricao,
+        })
+      );
       setEditando(false);
     }
   };
+
+  const contatosFiltrados = termo
+    ? itens.filter((contato: any) =>
+        contato.Name.toLowerCase().includes(termo.toLowerCase())
+      )
+    : itens;
 
   return (
     <>
       <S.ContactContainer>
         <ul>
-          {itens.map((contato: any) => (
+          {contatosFiltrados.map((contato: any) => (
             <S.ContactItem key={contato.telefone} onClick={() => handleClick(contato)}>
               <S.ContactDetails>
                 <S.ContactImage src={Img} alt="Ícone do Contato" />

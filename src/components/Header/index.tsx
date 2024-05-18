@@ -1,12 +1,13 @@
 import * as S from './styles'
-import FiltroDropdpwn from "../FiltroDropdown"
 import { ButtonLink } from '../../styles'
+import FiltroPesquisa from '../FiltroPesquisa'
 
 type Props = {
   Voltar?: boolean
 }
 
 const Header = ({ Voltar }: Props) => {
+
   return (
     <>
       {Voltar ? (
@@ -20,7 +21,7 @@ const Header = ({ Voltar }: Props) => {
         <S.Header>
           <h1>Lista de Contatos</h1>
           <S.Div>
-            <FiltroDropdpwn />
+            <FiltroPesquisa />
             <ButtonLink to='/NovoContato'>Novo Contato</ButtonLink>
           </S.Div>
         </S.Header>
